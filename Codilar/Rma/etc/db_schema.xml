@@ -1,0 +1,58 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="codilar_rma_reason" resource="default" engine="innodb" comment="RMA Reason Table">
+        <column xsi:type="int" name="reason_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Reason ID"/>
+        <column xsi:type="varchar" name="title" nullable="false" comment="Title"/>
+        <column xsi:type="smallint" name="status" nullable="false"  comment="Status"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="reason_id"/>
+        </constraint>
+    </table>
+
+    <table name="codilar_rma_condition" resource="default" engine="innodb" comment="RMA Condition Table">
+        <column xsi:type="int" name="condition_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Condition ID"/>
+        <column xsi:type="varchar" name="title" nullable="false"  comment="Title"/>
+        <column xsi:type="smallint" name="status" nullable="false"  comment="Status"/>
+        <column xsi:type="timestamp" name="created_at" nullable="true" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="true" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="condition_id"/>
+        </constraint>
+    </table>
+
+     <table name="codilar_rma_order" resource="default" engine="innodb" comment="RMA Order Table">
+        <column xsi:type="int" name="rma_order_id" padding="10" unsigned="true" nullable="false" identity="true" comment="RMA Order ID"/>
+        <column xsi:type="int" name="order_id" nullable="true" comment="Order ID"/>
+        <column xsi:type="varchar" name="status" nullable="true"  comment="Status"/>
+        <column xsi:type="timestamp" name="created_at" nullable="true" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="true" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="rma_order_id"/>
+        </constraint>
+    </table>
+
+    <table name="codilar_rma_rma" resource="default" engine="innodb" comment="RMA Table">
+        <column xsi:type="int" name="rma_id" padding="10" unsigned="true" nullable="false" identity="true" comment="RMA ID"/>
+        <column xsi:type="varchar" name="order_id" nullable="false"  comment="Order ID"/>
+        <column xsi:type="int" name="qty_return" nullable="false" comment="Qty Return"/>
+        <column xsi:type="varchar" name="reason" nullable="false"  comment="Reason"/>
+        <column xsi:type="varchar" name="condition" nullable="false"  comment="Condition"/>
+        <column xsi:type="int" name="item_id" nullable="false" comment="Item ID"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="rma_id"/>
+        </constraint>
+    </table>
+
+    <table name="codilar_rma_status" resource="default" engine="innodb" comment="RMA Status Table">
+        <column xsi:type="int" name="status_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Status ID"/>
+        <column xsi:type="varchar" name="title" nullable="false"  comment="Title"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="status_id"/>
+        </constraint>
+    </table>
+</schema>

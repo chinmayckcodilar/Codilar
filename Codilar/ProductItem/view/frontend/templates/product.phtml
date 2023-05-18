@@ -1,0 +1,19 @@
+<?php
+
+$categoryId = 5; 
+
+$productBlock = $block->getLayout()->createBlock('Codilar\ProductItem\Block\Product');
+$productCollection = $productBlock->getCategoryProducts($categoryId);
+
+foreach ($productCollection as $product) {
+    echo "Product Name: " . $product->getName() . "<br>";
+    echo "Product Price: " . $product->getPrice() . "<br>";
+    echo "Product SKU: " . $product->getSku() . "<br><br>"; echo "Product Images: <br>";
+    foreach ($product->getMediaGalleryImages() as $image) {
+        echo "<img src='" . $image->getUrl() . "' width=30%'" . $image->getWidth() . "' height=30%'" . $image->getHeight() . "'><br>";
+    }
+    echo "<br>";
+
+}
+
+

@@ -1,0 +1,64 @@
+{
+    "codilar_rma_reason": {
+        "column": {
+            "reason_id": true,
+            "title": true,
+            "status": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "codilar_rma_condition": {
+        "column": {
+            "condition_id": true,
+            "title": true,
+            "status": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "codilar_rma_order": {
+        "column": {
+            "rma_order_id": true,
+            "order_id": true,
+            "status": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "codilar_rma_rma": {
+        "column": {
+            "rma_id": true,
+            "order_id": true,
+            "qty_return": true,
+            "reason": true,
+            "condition": true,
+            "item_id": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "codilar_rma_status": {
+        "column": {
+            "status_id": true,
+            "title": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

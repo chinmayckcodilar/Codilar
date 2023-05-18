@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Codilar_Rma::rma" title="Rma" module="Codilar_Rma" resource="Magento_Backend::content" sortOrder="10"/>
+
+		<add id="Codilar_Rma::showrma" title="Show All RMA" module="Codilar_Rma" resource="Codilar_Rma::showrma" sortOrder="11" parent="Codilar_Rma::rma" action="rma/rma/index" />
+		
+
+		<add id="Codilar_Rma::reason" title="Reason" module="Codilar_Rma" resource="Codilar_Rma::reason" sortOrder="13" parent="Codilar_Rma::rma" action="rma/reason/index" />
+		<add id="Codilar_Rma::condition" title="Condition" module="Codilar_Rma" resource="Codilar_Rma::condition" sortOrder="14" parent="Codilar_Rma::rma" action="rma/condition/index" />
+		<add id="Codilar_Rma::status" title="Status" module="Codilar_Rma" resource="Codilar_Rma::status" sortOrder="15" parent="Codilar_Rma::rma" action="rma/status/index" />
+
+
+		<add id="Codilar_Rma::congiguration" title="RMA Configuration" module="Codilar_Rma" resource="Codilar_Rma::congiguration" sortOrder="16" parent="Codilar_Rma::rma" action="adminhtml/system_config/edit/section/rma/" />
+
+
+	</menu>
+</config>

@@ -1,0 +1,84 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="codilar_rma_listing_data_source" xsi:type="string">Codilar\Rma\Model\ResourceModel\Order\Grid\Collection</item>
+            </argument>
+        </arguments>
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="codilar_rma_form_data_source" xsi:type="string">Codilar\Rma\Model\ResourceModel\Order\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Codilar\Rma\Model\ResourceModel\Order\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">codilar_rma_order</argument>
+            <argument name="resourceModel" xsi:type="string">Codilar\Rma\Model\ResourceModel\Order</argument>
+        </arguments>
+    </virtualType>
+
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="codilar_reason_listing_data_source" xsi:type="string">Codilar\Rma\Model\ResourceModel\Reason\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Codilar\Rma\Model\ResourceModel\Reason\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">codilar_rma_reason</argument>
+            <argument name="resourceModel" xsi:type="string">Codilar\Rma\Model\ResourceModel\Reason</argument>
+        </arguments>
+    </virtualType>
+
+     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="codilar_condition_listing_data_source" xsi:type="string">Codilar\Rma\Model\ResourceModel\Condition\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Codilar\Rma\Model\ResourceModel\Condition\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">codilar_rma_condition</argument>
+            <argument name="resourceModel" xsi:type="string">Codilar\Rma\Model\ResourceModel\Condition</argument>
+        </arguments>
+    </virtualType>
+
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="codilar_status_listing_data_source" xsi:type="string">Codilar\Rma\Model\ResourceModel\Status\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Codilar\Rma\Model\ResourceModel\Status\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">codilar_rma_status</argument>
+            <argument name="resourceModel" xsi:type="string">Codilar\Rma\Model\ResourceModel\Status</argument>
+        </arguments>
+    </virtualType>
+
+     <preference for="Codilar\Rma\Api\ConditionRepositoryInterface" type="Codilar\Rma\Model\ConditionRepository" />
+
+    <preference for="Codilar\Rma\Api\Data\ConditionInterface" type="Codilar\Rma\Model\Condition" />
+
+    <preference for="Codilar\Rma\Api\RmaRepositoryInterface" type="Codilar\Rma\Model\RmaRepository" />
+
+    <preference for="Codilar\Rma\Api\Data\RmaInterface" type="Codilar\Rma\Model\Rma" />
+
+    <preference for="Codilar\Rma\Api\OrderRepositoryInterface" type="Codilar\Rma\Model\OrderRepository" />
+
+    <preference for="Codilar\Rma\Api\Data\OrderInterface" type="Codilar\Rma\Model\Order" />
+
+    <preference for="Codilar\Rma\Api\StatusRepositoryInterface" type="Codilar\Rma\Model\StatusRepository" />
+
+    <preference for="Codilar\Rma\Api\Data\StatusInterface" type="Codilar\Rma\Model\Status" />
+
+
+
+
+</config>

@@ -1,0 +1,9 @@
+<div class="product-list">
+    <?php foreach ($block->getProductCollection() as $product): ?>
+        <div class="product-item">
+            <h2><?= $product->getName() ?></h2>
+            <img src="<?= $product->getImageUrl() ?>" alt="<?= $product->getName() ?>" />
+            <p><?= __('Price: $%1', $product->getPrice()) ?></p>
+        </div>
+    <?php endforeach; ?>
+</div>
